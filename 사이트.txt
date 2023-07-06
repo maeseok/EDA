@@ -1,0 +1,10 @@
+https://wikidocs.net/book/7188 - pandas
+https://wikidocs.net/book/4852 - 판다스 문제
+https://wikidocs.net/book/5011 - matplotlib
+https://wikidocs.net/book/1867 - 분석 실무
+https://wikidocs.net/book/6072 - 데이터 분석
+https://wikidocs.net/book/4367 - 캐글
+https://wikidocs.net/book/4764 - 데이터 전처리
+https://wikidocs.net/book/2453 - 데이터 조작
+https://wikidocs.net/48108 - 통계지식
+https://wikidocs.net/book/6371 - SQL

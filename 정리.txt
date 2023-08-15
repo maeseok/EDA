@@ -1,7 +1,0 @@
-덧셈 - add
-뺄셈 - sub
-곱셈 - mul
-나눗셈 - div
-나머지 - mod
-거듭제곱 - pow
-행렬곱 - dot

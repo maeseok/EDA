@@ -8,6 +8,3 @@ https://wikidocs.net/book/4764 - 데이터 전처리
 https://wikidocs.net/book/2453 - 데이터 조작
 https://wikidocs.net/48108 - 통계지식
 https://wikidocs.net/book/6371 - SQL
-
--> 0725~ EDA 실전 시작 + 코딩 테스트 준비
--> 0801~ 코테 + 면접 이론

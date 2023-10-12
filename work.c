@@ -1,14 +1,6 @@
-/*
- * GccApplication1.c
- *
- * Created: 2023-10-01 오후 7:05:40
- * Author : lee
- */ 
-
 #define F_CPU 16000000L
 #include <avr/io.h>
 #include <util/delay.h>
-//PIN 외부연결, DDR 입출력, PORT 데이터
 char circular_shift_left(char pattern){
 	char LSB=pattern&0x80;
 	char MSB=LSB>>7;
@@ -16,7 +8,6 @@ char circular_shift_left(char pattern){
 	new_pattern |= MSB;
 	return new_pattern;
 }
-
 
 int main(void) {
 	DDRB = 0xFF;

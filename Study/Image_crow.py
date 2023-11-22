@@ -27,8 +27,9 @@ createFolder()
 
 #배우 리스트
 #https://namu.wiki/w/%EB%B0%B0%EC%9A%B0/%ED%95%9C%EA%B5%AD
+#https://justweon-dev.tistory.com/m/41
 
-# 사이트 접속하기
+# 사이트 접속하기 -> 이걸로도 가능하게 코드 수정해놓을 것 (인물 당 20장 정도 사진 저장 ) -> 발표할 때 코드 더 성의있게 한 부분?
 keyword=["수지","이선균","황정민"] #인물 리스트만 설정하면 될 듯
 for i in keyword:
     url = 'https://search.naver.com/search.naver?where=nexearch&sm=tab_jum&query={}'.format(i)

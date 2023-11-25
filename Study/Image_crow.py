@@ -14,7 +14,7 @@ options = ChromeOptions()
 options.add_argument("headless") #백그라운드 실행
 #options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-driver.implicitly_wait(30)
+driver.implicitly_wait(30)9
 
 #폴더 생성 함수
 def createFolder (name) :

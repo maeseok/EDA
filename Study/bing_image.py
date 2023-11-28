@@ -89,7 +89,7 @@ class ImageCrawling():
             self.keyword+='웹툰'
          
         for search in self.List:
-            downloader.download(search, limit=40,  output_dir=os.path.join(self.keyword+'사진'),
+            downloader.download(search, limit=200,  output_dir=os.path.join(self.keyword+'사진'),
                                 adult_filter_off=True, force_replace=False, timeout=70)
 
 if __name__=="__main__":

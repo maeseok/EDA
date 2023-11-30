@@ -265,10 +265,14 @@ class AutoCrawler:
 
     def init_worker(self):
         signal.signal(signal.SIGINT, signal.SIG_IGN)
-        
-    def do_crawling(self):
-        keywords = self.get_keywords()
-
+    
+    #메인 코드
+    def do_crawling(self,target,InputData=0):
+        #keywords.txt에서 키워드 받아오기
+        if InputData==0:
+            keywords = self.get_keywords("{}.txt".format(target))
+        else:
+            keywords=[InputData]
         tasks = []
 
         for keyword in keywords:
@@ -391,10 +395,13 @@ if __name__ == '__main__':
     print(
         'Options - skip:{}, threads:{}, google:{}, naver:{}, full_resolution:{}, face:{}, no_gui:{}, limit:{}, _proxy_list:{}'
             .format(_skip, _threads, _google, _naver, _full, _face, _no_gui, _limit, _proxy_list))
-    #일단 naver 안됨(코드 수정 or 안쓰기)
-    #패키지로 만들어서 import 해서 깔끔하게 사용하기
-    #코드도 수정하기?
+
+    #메인 실행 코드
+    target='남자배우'
     crawler = AutoCrawler(skip_already_exist=False, n_threads=4,
-                          do_google=True, do_naver=False, full_resolution=False,
-                          face=True, no_gui=False, limit=1000, proxy_list=_proxy_list)
-    crawler.do_crawling()
+                          do_google=True, do_naver=False, full_resolution=False,download_path=target,
+                          face=True, no_gui=True, limit=1000, proxy_list=_proxy_list)
+    #매개변수
+    #target : 검색 종류(EX 남자배우, 여자배우, 웹툰 등)
+    #InputData : 검색어 직접 입력  
+    crawler.do_crawling(target)

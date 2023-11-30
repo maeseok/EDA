@@ -60,11 +60,11 @@ class CollectLinks:
                 'Download correct version at "http://chromedriver.chromium.org/downloads" and place in "./chromedriver"')
         print('_________________________________')
 
-    def get_scroll(self):
+    def get_scroll(self): #스크롤 내리기
         pos = self.browser.execute_script("return window.pageYOffset;")
         return pos
 
-    def wait_and_click(self, xpath):
+    def wait_and_click(self, xpath): #결과 더보기 클릭
         #  Sometimes click fails unreasonably. So tries to click at all cost.
         try:
             w = WebDriverWait(self.browser, 15)
@@ -75,7 +75,7 @@ class CollectLinks:
             print('Click time out - {}'.format(xpath))
             print('Refreshing browser...')
             self.browser.refresh()
-            time.sleep(2)
+            time.sleep(1)
             return self.wait_and_click(xpath)
 
         return elem
@@ -148,7 +148,8 @@ class CollectLinks:
             elem.send_keys(Keys.PAGE_DOWN)
             time.sleep(0.2)
 
-        imgs = self.browser.find_elements(By.XPATH, '//div[@class="photo_bx api_ani_send _photoBox"]//img[@class="_image _listImage"]')
+        imgs = self.browser.find_elements(By.XPATH, '//div[@class="image_tile _fe_image_tab_grid"]//img[@class="_fe_image_tab_content_thumbnail_image"]')
+      
 
         print('Scraping links')
 

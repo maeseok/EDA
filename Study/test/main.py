@@ -267,12 +267,12 @@ class AutoCrawler:
         signal.signal(signal.SIGINT, signal.SIG_IGN)
     
     #메인 코드
-    def do_crawling(self,target,InputData=0):
+    def do_crawling(self,target,InputData=[]):
         #keywords.txt에서 키워드 받아오기
-        if InputData==0:
+        if len(InputData)==0:
             keywords = self.get_keywords("{}.txt".format(target))
         else:
-            keywords=[InputData]
+            keywords=InputData
         tasks = []
 
         for keyword in keywords:
@@ -397,9 +397,9 @@ if __name__ == '__main__':
             .format(_skip, _threads, _google, _naver, _full, _face, _no_gui, _limit, _proxy_list))
 
     #메인 실행 코드
-    target='남자배우'
+    target='여자배우'
     crawler = AutoCrawler(skip_already_exist=False, n_threads=4,
-                          do_google=True, do_naver=False, full_resolution=False,download_path=target,
+                          do_google=False, do_naver=True, full_resolution=False,download_path=target,
                           face=True, no_gui=True, limit=1000, proxy_list=_proxy_list)
     #매개변수
     #target : 검색 종류(EX 남자배우, 여자배우, 웹툰 등)

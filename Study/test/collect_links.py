@@ -71,14 +71,11 @@ class CollectLinks:
             elem = w.until(EC.element_to_be_clickable((By.XPATH, xpath)))
             elem.click()
             self.highlight(elem)
+            return elem
         except Exception as e:
-            print('Click time out - {}'.format(xpath))
-            print('Refreshing browser...')
-            self.browser.refresh()
-            time.sleep(1)
-            return self.wait_and_click(xpath)
+            pass
 
-        return elem
+        
 
     def highlight(self, element):
         self.browser.execute_script("arguments[0].setAttribute('style', arguments[1]);", element,

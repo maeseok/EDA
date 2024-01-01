@@ -31,7 +31,7 @@ def load_images_from_folder(folder):
 
     return np.array(images)
 
-images = load_images_from_folder('./여자배우/배다빈')
+images = load_images_from_folder('./여자배우/배다빈_수정본')
 
 model = VGG16(weights='imagenet', include_top=False)
 features = model.predict(images)
